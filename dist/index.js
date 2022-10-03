@@ -12,6 +12,12 @@ let offTop = height + canvas.offsetTop;
 inputs[0].checked = true;
 var balls = values;
 var ball = balls[0];
+function varr() {
+  width = canvas?.clientWidth;
+  height = canvas?.clientHeight;
+  offLeft = width + canvas.offsetLeft;
+  offTop = height + canvas.offsetTop;
+}
 balll.className = "ball football";
 ball.position.x = canvas.offsetLeft + width / 2 - rd;
 ball.position.y = height / 2;
@@ -50,6 +56,7 @@ function getBall() {
   });
 }
 function loop() {
+  varr();
   getBall();
   document.addEventListener("mousedown", move);
   document.addEventListener("mousemove", getMousePos);
@@ -91,6 +98,7 @@ function loop() {
     veloctiy x/y:${ball.velocity.x} / ${ball.velocity.y}
     ballRadius : ${ball.radius}
     ballMass: ${ball.mass}
+    width/Height : ${width}/${height}
 `;
   balll.style.top = ball.position.y + "px";
   balll.style.left = ball.position.x + "px";
